@@ -31,6 +31,12 @@ def read_csv(filename = 'data/emojify_data.csv'):
     maxLen = len(max(X_train, key=len).split())
     
     # Check sentences and label
+def label_to_emoji(label):
+    """
+    Converts a label (int or string) into the corresponding emoji code (string) ready to be printed
+    """
+    return emoji.emojize(emoji_dictionary[str(label)], use_aliases=True)
+    
     index = 15
     print(X_train[index], label_to_emoji(Y_train[index]))
     
